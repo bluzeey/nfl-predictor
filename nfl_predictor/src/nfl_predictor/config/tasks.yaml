@@ -1,0 +1,72 @@
+# config/tasks.yaml
+
+statistical_analysis_task:
+  description: >
+    Analyze the following statistical data for {team1} and {team2}:
+    - Last 5 games performance
+    - Head-to-head history
+    - Current season statistics (offense and defense)
+    - Player availability and injuries
+    - Home/Away performance records
+    Make sure to consider recent trends and patterns.
+  expected_output: >
+    A detailed statistical comparison between both teams with key performance indicators
+    and historical data analysis.
+  agent: stats_analyst
+
+team_research_task:
+  description: >
+    Research and analyze:
+    - Current injury reports for both {team1} and {team2}
+    - Impact of missing players on team performance
+    - Probable replacements and their capabilities
+    - Recent team developments and changes
+  expected_output: >
+    Comprehensive team analysis including injuries, roster changes, and current team condition.
+  agent: team_researcher
+
+matchup_analysis_task:
+  description: >
+    Analyze specific matchup factors:
+    - Historical head-to-head performance
+    - Coaching strategy comparisons
+    - Team playing style compatibility
+    - Key player matchups
+  expected_output: >
+    Detailed matchup analysis focusing on team dynamics and strategic elements.
+  agent: matchup_analyst
+
+environmental_analysis_task:
+  description: >
+    Analyze the following environmental factors:
+    - Weather forecast for game day
+    - Stadium conditions
+    - Teams' historical performance in similar conditions
+    - Home/away impact analysis
+  expected_output: >
+    Detailed analysis of environmental factors and their potential impact on the game.
+  agent: environmental_analyst
+
+prediction_synthesis_task:
+  description: >
+    Synthesize all analyses to:
+    - Calculate win probability for each team
+    - Identify key factors that could swing the game
+    - Provide detailed reasoning for the prediction
+    - Consider all variables from previous analyses
+    
+    Format your response as a JSON structure with the following keys:
+    - team1: name of first team
+    - team2: name of second team
+    - probability_team1: win probability for team1 (as a number between 0-100)
+    - probability_team2: win probability for team2 (as a number between 0-100)
+    - reasoning: key factors affecting the prediction
+  expected_output: >
+    {
+      "team1": {team1},
+      "team2": {team2},
+      "probability_team1": numerical_probability,
+      "probability_team2": numerical_probability,
+      "reasoning": "detailed reasoning"
+    }
+  agent: prediction_synthesizer
