@@ -54,19 +54,12 @@ prediction_synthesis_task:
     - Identify key factors that could swing the game
     - Provide detailed reasoning for the prediction
     - Consider all variables from previous analyses
-    
-    Format your response as a JSON structure with the following keys:
+  expected_output: > 
+  Format your response as a JSON structure with the following keys:
     - team1: name of first team
     - team2: name of second team
     - probability_team1: win probability for team1 (as a number between 0-100)
     - probability_team2: win probability for team2 (as a number between 0-100)
     - reasoning: key factors affecting the prediction
-  expected_output: >
-    {
-      "team1": {team1},
-      "team2": {team2},
-      "probability_team1": numerical_probability,
-      "probability_team2": numerical_probability,
-      "reasoning": "detailed reasoning"
-    }
+
   agent: prediction_synthesizer
